@@ -23,10 +23,13 @@ import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+
+import AdditionalFields from './additional-fields.plugin';
 
 export default class InlineEditor extends InlineEditorBase {}
 
@@ -49,6 +52,8 @@ InlineEditor.builtinPlugins = [
 	Link,
 	List,
 	MediaEmbed,
+	Alignment,
+	AdditionalFields,
 	Paragraph,
 	PasteFromOffice,
 	Table,
@@ -63,13 +68,21 @@ InlineEditor.defaultConfig = {
 			'|',
 			'bold',
 			'italic',
-			'link',
+			'|',
+			'alignment:left',
+			'alignment:center',
+			'alignment:right',
+			'alignment:justify',
+			'|',
 			'bulletedList',
 			'numberedList',
+			'|',
+			'link',
 			'imageUpload',
 			'blockQuote',
 			'insertTable',
 			'mediaEmbed',
+			'additionalFields',
 			'undo',
 			'redo'
 		]
@@ -88,6 +101,8 @@ InlineEditor.defaultConfig = {
 			'tableRow',
 			'mergeTableCells'
 		]
+	},
+	additionalFields: {
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'

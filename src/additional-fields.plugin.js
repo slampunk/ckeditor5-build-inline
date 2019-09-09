@@ -6,7 +6,7 @@ import { toWidget } from '@ckeditor/ckeditor5-widget/src/utils';
 
 import Collection from '@ckeditor/ckeditor5-utils/src/collection';
 
-import imageIcon from '@ckeditor/ckeditor5-core/theme/icons/image.svg';
+import circlePlusIcon from './circleplus.svg';
 
 export default class AdditionalFields extends Plugin {
 	constructor( props ) {
@@ -89,7 +89,7 @@ export default class AdditionalFields extends Plugin {
 		view.buttonView.set( {
 			isOn: false,
 			label: 'Additional fields for use',
-			icon: imageIcon,
+			icon: circlePlusIcon,
 			tooltip: true
 		} );
 

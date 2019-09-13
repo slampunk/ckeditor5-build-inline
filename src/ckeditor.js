@@ -15,14 +15,8 @@ import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
-import Image from '@ckeditor/ckeditor5-image/src/image';
-import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
-import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
-import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
-import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
-import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
@@ -44,14 +38,8 @@ InlineEditor.builtinPlugins = [
 	CKFinder,
 	EasyImage,
 	Heading,
-	Image,
-	ImageCaption,
-	ImageStyle,
-	ImageToolbar,
-	ImageUpload,
 	Link,
 	List,
-	MediaEmbed,
 	Alignment,
 	AdditionalFields,
 	Paragraph,
@@ -78,21 +66,11 @@ InlineEditor.defaultConfig = {
 			'numberedList',
 			'|',
 			'link',
-			'imageUpload',
 			'blockQuote',
 			'insertTable',
-			'mediaEmbed',
 			'additionalFields',
 			'undo',
 			'redo'
-		]
-	},
-	image: {
-		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
-			'|',
-			'imageTextAlternative'
 		]
 	},
 	table: {
@@ -104,6 +82,5 @@ InlineEditor.defaultConfig = {
 	},
 	additionalFields: {
 	},
-	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
 };

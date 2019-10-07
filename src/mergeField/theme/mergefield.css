@@ -14,3 +14,7 @@
 	color: #606060;
 }
 
+.ck-list {
+	max-height: 400px;
+	overflow-y: auto;
+}

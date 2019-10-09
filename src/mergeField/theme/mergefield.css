@@ -18,3 +18,56 @@
 	max-height: 400px;
 	overflow-y: auto;
 }
+
+.complex-merge-field {
+	padding: 10px;
+	background: #eee;
+	border: 1px solid #bbb;
+	outline: none;
+}
+
+.ck .complex-merge-field h2 {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 0;
+	outline: none;
+}
+
+.ck .ck-editor__nested-editable.complex-content {
+	padding: 10px;
+	background: white;
+	border: 1px solid #bbb;
+	position: relative;
+	margin-top: 40px;
+}
+
+.complex-content::before {
+	content: 'List wording';
+	position: absolute;
+	top: -25px;
+	left: 0;
+	line-height: 20px;
+	font-style: italic;
+}
+
+.complex-content p:last-child {
+	margin-bottom: 0;
+}
+
+.complex-instructions {
+	font-weight: 600;
+	border: 1px solid #a0a7ff;
+	background: #d0d7e0;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.complex-instructions::before {
+	content: 'The text below defines the wording for the associated list items.\A The following fields are available for use: ';
+	font-weight: normal;
+	white-space: pre-wrap;
+}
+
+.original-content {
+	display: none;
+}

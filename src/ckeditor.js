@@ -25,6 +25,7 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 
 import AdditionalFields from './additional-fields.plugin';
 import MergeField from './mergeField/mergeField';
+import ComplexMergeField from './mergeField/complexMergeField';
 
 export default class InlineEditor extends InlineEditorBase {}
 
@@ -47,7 +48,8 @@ InlineEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	MergeField
+	MergeField,
+	ComplexMergeField
 ];
 
 // Editor configuration.

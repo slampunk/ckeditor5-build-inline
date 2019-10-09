@@ -23,7 +23,9 @@ export default class AdditionalFields extends Plugin {
 
 		const { onLoadMergeFields } = editor.config._config;
 
-		onLoadMergeFields( fields => this.fire( 'fields', fields ) );
+		if ( onLoadMergeFields ) {
+			onLoadMergeFields( fields => this.fire( 'fields', fields ) );
+		}
 	}
 
 	_addFields( args, fields ) {

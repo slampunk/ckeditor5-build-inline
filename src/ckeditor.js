@@ -13,21 +13,18 @@ import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
-import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
-import Image from '@ckeditor/ckeditor5-image/src/image';
-import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
-import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
-import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
-import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
-import Indent from '@ckeditor/ckeditor5-indent/src/indent';
-import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
-import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import Font from '@ckeditor/ckeditor5-font/src/font';
+
+import AdditionalFields from './additional-fields.plugin';
+import MergeField from './mergeField/mergeField';
+import ComplexMergeField from './mergeField/complexMergeField';
 
 export default class InlineEditor extends InlineEditorBase {}
 
@@ -35,22 +32,18 @@ export default class InlineEditor extends InlineEditorBase {}
 InlineEditor.builtinPlugins = [
 	Essentials,
 	UploadAdapter,
+	AdditionalFields,
+	Alignment,
 	Autoformat,
-	Bold,
-	Italic,
 	BlockQuote,
+	Bold,
 	CKFinder,
-	EasyImage,
+	ComplexMergeField,
+	Font,
 	Heading,
-	Image,
-	ImageCaption,
-	ImageStyle,
-	ImageToolbar,
-	ImageUpload,
-	Indent,
-	Link,
+	Italic,
 	List,
-	MediaEmbed,
+	MergeField,
 	Paragraph,
 	PasteFromOffice,
 	Table,
@@ -65,27 +58,22 @@ InlineEditor.defaultConfig = {
 			'|',
 			'bold',
 			'italic',
-			'link',
+			'|',
+			'fontSize',
+			'fontFamily',
+			'alignment:left',
+			'alignment:center',
+			'alignment:right',
+			'alignment:justify',
+			'|',
 			'bulletedList',
 			'numberedList',
 			'|',
-			'indent',
-			'outdent',
-			'|',
-			'imageUpload',
 			'blockQuote',
 			'insertTable',
-			'mediaEmbed',
+			'additionalFields',
 			'undo',
 			'redo'
-		]
-	},
-	image: {
-		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
-			'|',
-			'imageTextAlternative'
 		]
 	},
 	table: {

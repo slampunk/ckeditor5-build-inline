@@ -28,6 +28,7 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import Font from '@ckeditor/ckeditor5-font/src/font';
 
 import AdditionalFields from './additional-fields.plugin';
 
@@ -57,7 +58,8 @@ InlineEditor.builtinPlugins = [
 	Paragraph,
 	PasteFromOffice,
 	Table,
-	TableToolbar
+	TableToolbar,
+	Font
 ];
 
 // Editor configuration.
@@ -68,6 +70,9 @@ InlineEditor.defaultConfig = {
 			'|',
 			'bold',
 			'italic',
+			'|',
+			'fontFamily',
+			'fontSize',
 			'|',
 			'alignment:left',
 			'alignment:center',

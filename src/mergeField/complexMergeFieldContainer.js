@@ -23,18 +23,6 @@ export default class ComplexMergeFieldContainer extends Plugin {
 			isObject: true,
 			allowWhere: '$block'
 		} );
-		schema.register( 'complexHeading', {
-			isObject: true,
-			isLimit: true,
-			allowIn: 'complexMergeField',
-			allowContentOf: '$block'
-		} );
-		schema.register( 'complexInstructions', {
-			isObject: true,
-			isLimit: true,
-			allowIn: 'complexMergeField',
-			allowContentOf: '$block'
-		} );
 		schema.register( 'complexContent', {
 			isObject: true,
 			isLimit: true,
@@ -58,22 +46,6 @@ export default class ComplexMergeFieldContainer extends Plugin {
 			view: {
 				name: 'section',
 				classes: 'complex-merge-field'
-			}
-		} );
-
-		conversion.for( 'upcast' ).elementToElement( {
-			model: 'complexHeading',
-			view: {
-				name: 'h2',
-				classes: 'complex-heading'
-			}
-		} );
-
-		conversion.for( 'upcast' ).elementToElement( {
-			model: 'complexInstructions',
-			view: {
-				name: 'p',
-				classes: 'complex-instructions',
 			}
 		} );
 
@@ -105,22 +77,6 @@ export default class ComplexMergeFieldContainer extends Plugin {
 		} );
 
 		conversion.for( 'editingDowncast' ).elementToElement( {
-			model: 'complexHeading',
-			view: ( modelItem, viewWriter ) => {
-				const widgetElement = viewWriter.createContainerElement( 'h2', { class: 'complex-heading' } );
-				return toWidget( widgetElement, viewWriter );
-			}
-		} );
-
-		conversion.for( 'editingDowncast' ).elementToElement( {
-			model: 'complexInstructions',
-			view: ( modelItem, viewWriter ) => {
-				const widgetElement = viewWriter.createContainerElement( 'p', { class: 'complex-instructions' } );
-				return toWidget( widgetElement, viewWriter );
-			}
-		} );
-
-		conversion.for( 'editingDowncast' ).elementToElement( {
 			model: 'complexContent',
 			view: ( modelItem, viewWriter ) => {
 				const widgetElement = viewWriter.createEditableElement( 'div', { class: 'complex-content' } );
@@ -142,22 +98,6 @@ export default class ComplexMergeFieldContainer extends Plugin {
 		conversion.for( 'dataDowncast' ).elementToElement( {
 			model: 'complexMergeField',
 			view: createMergeFieldView
-		} );
-
-		conversion.for( 'dataDowncast' ).elementToElement( {
-			model: 'complexHeading',
-			view: {
-				name: 'h2',
-				classes: 'complex-heading'
-			}
-		} );
-
-		conversion.for( 'dataDowncast' ).elementToElement( {
-			model: 'complexInstructions',
-			view: {
-				name: 'p',
-				classes: 'complex-instructions',
-			}
 		} );
 
 		conversion.for( 'dataDowncast' ).elementToElement( {

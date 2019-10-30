@@ -38,16 +38,10 @@
 	background: white;
 	border: 1px solid #bbb;
 	position: relative;
-	margin-top: 40px;
 }
 
-.complex-content::before {
-	content: 'List wording';
-	position: absolute;
-	top: -25px;
-	left: 0;
-	line-height: 20px;
-	font-style: italic;
+.complex-content p:first-child {
+	margin-top: 0;
 }
 
 .complex-content p:last-child {
